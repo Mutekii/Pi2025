@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "MiBandBLE",
+    "slug": "MiBandBLE",
+    "scheme": "mibandble",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.anonymous.MiBandBLE"
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.MiBandBLE",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Este app usa Bluetooth para se conectar à Mi Band 8.",
+        "NSLocationWhenInUseUsageDescription": "Precisamos da sua localização para escanear dispositivos Bluetooth."
+      }
+    },
+    "plugins": [
+      "react-native-ble-plx",
+      [
+        "react-native-permissions",
+        {
+          "permissions": {
+            "android": [
+              "BLUETOOTH_SCAN",
+              "BLUETOOTH_CONNECT",
+              "ACCESS_FINE_LOCATION"
+            ],
+            "ios": [
+              "BLUETOOTH_ALWAYS",
+              "LOCATION_WHEN_IN_USE"
+            ]
+          }
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "gradleProperties": {
+              "org.gradle.java.home": "C:/Program Files/Eclipse Adoptium/jdk-21.0.7.6-hotspot"
+            }
+          }
+        }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
